@@ -1,0 +1,171 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fce4ec; /* Very light pink background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header, .footer {
+            background-color: #ff69b4; /* Pink color for header and footer */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #ff6347; /* Light red background color */
+            border: none;
+            color: white;
+        }
+
+        .alert-danger {
+            color: white;
+            background-color: #ff6347; /* Light red background color for alert */
+        }
+
+        .chatbot-button {
+            border-radius: 50%;
+            background-color: #ff69b4;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+        }
+
+        .logout-button {
+            background-color: #ff6347; /* Light red background color */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #chatbot-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #chatbot {
+            display: none;
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 300px;
+            height: 400px;
+        }
+
+        #chatbox {
+            height: 300px;
+            overflow-y: scroll;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Login Page</h1>
+    </header>
+
+    <div class="container mt-4">
+        <h2>Login</h2>
+
+        <form asp-action="Login" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            @if (ViewBag.Error != null)
+            {
+                <div class="alert alert-danger mt-2">@ViewBag.Error</div>
+            }
+        </form>
+    </div>
+
+    <!-- Chatbot Integration -->
+    <div id="chatbot-container">
+        <button onclick="toggleChatbot()" class="chatbot-button">
+            👧
+        </button>
+        <div id="chatbot">
+            <div id="chatbox"></div>
+            <input type="text" id="userInput" placeholder="Type a message..." class="form-control" />
+            <button onclick="sendMessage()" class="btn btn-primary mt-2">Send</button>
+            <button onclick="startVoiceInput()" class="btn btn-secondary mt-2">🎤 Voice Input</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            var chatbot = document.getElementById("chatbot");
+            chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+        }
+
+        async function sendMessage() {
+            var userInput = document.getElementById("userInput").value;
+            var chatbox = document.getElementById("chatbox");
+
+            var userMessage = document.createElement("div");
+            userMessage.textContent = "You: " + userInput;
+            chatbox.appendChild(userMessage);
+
+            var response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userInput })
+            });
+            var botMessage = await response.text();
+
+            var botResponse = document.createElement("div");
+            botResponse.textContent = "Bot: " + botMessage;
+            chatbox.appendChild(botResponse);
+
+            document.getElementById("userInput").value = "";
+        }
+
+        function startVoiceInput() {
+            var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.onresult = function (event) {
+                var userInput = event.results[0][0].transcript;
+                document.getElementById("userInput").value = userInput;
+
+                // Auto-fill login details if the command is detected
+                if (userInput.includes("login with")) {
+                    document.getElementById("username").value = "yourUsername";
+                    document.getElementById("password").value = "yourPassword";
+                }
+            };
+            recognition.start();
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Login Page</p>
+    </footer>
+
+</body>
+</html>

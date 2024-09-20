@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|c:\\users\\avadhesh dubey\\desktop\\cmv\\migrations\\20240829050348_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|solutionrelative:migrations\\20240829050348_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|c:\\users\\avadhesh dubey\\desktop\\cmv\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|c:\\users\\avadhesh dubey\\desktop\\cmv\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|c:\\users\\avadhesh dubey\\desktop\\cmv\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|solutionrelative:models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|c:\\users\\avadhesh dubey\\desktop\\cmv\\views\\customer\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|solutionrelative:views\\customer\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|c:\\users\\avadhesh dubey\\desktop\\cmv\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|c:\\users\\avadhesh dubey\\desktop\\cmv\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|c:\\users\\avadhesh dubey\\desktop\\cmv\\cmv.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{535A598C-4679-4506-8DE3-5A63313DA195}|CMV.csproj|solutionrelative:cmv.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20240829050348_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Migrations\\20240829050348_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240829050348_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Migrations\\20240829050348_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20240829050348_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T05:03:49.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-29T04:33:04.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAkwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T09:59:47.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T09:55:18.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Views\\Customer\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Customer\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Views\\Customer\\Login.cshtml",
+              "RelativeToolTip": "Views\\Customer\\Login.cshtml",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAowKsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-28T09:55:01.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "Controllers\\ChatController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAgwBEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T09:54:24.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-23T09:23:08.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CMV.csproj",
+              "DocumentMoniker": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\CMV.csproj",
+              "RelativeDocumentMoniker": "CMV.csproj",
+              "ToolTip": "C:\\Users\\Avadhesh Dubey\\Desktop\\CMV\\CMV.csproj",
+              "RelativeToolTip": "CMV.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-23T09:08:22.445Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+﻿@model IEnumerable<CMV.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customer List";
+
+    var sessionCustomerName = ViewBag.SessionCustomerName as string;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #fce4ec; /* Very light pink background color */
+        }
+
+        .logout-button {
+            background-color: #ff6347; /* Light red background color */
+            color: white; /* White text color */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Customer List</h2>
+
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+
+    @if (!string.IsNullOrEmpty(sessionCustomerName))
+
+    {
+        <p>Session Customer Name: @sessionCustomerName</p>
+    }
+
+    else
+
+    {
+        <p>Session Customer Name: Not logged in</p>
+    }
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var item in Model)
+
+                {
+                    <tr>
+                        <td>@item.FirstName</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.Address</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.CustomerID" class="btn btn-info">Details</a>
+                            <a asp-action="Edit" asp-route-id="@item.CustomerID" class="btn btn-warning">Edit</a>
+                            <form asp-action="Delete" asp-route-id="@item.CustomerID" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6">No customers found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Chatbot Integration -->
+    <div id="chatbot-container" style="position: fixed; top: 10px; right: 10px; display: flex; flex-direction: column; align-items: center;">
+        <button onclick="toggleChatbot()" style="border-radius: 50%; background-color: #ff69b4; width: 60px; height: 60px; font-size: 30px;">
+            👧
+        </button>
+        <div id="chatbot" style="display: none; background-color: white; border: 1px solid #ccc; width: 300px; height: 400px;">
+            <div id="chatbox" style="height: 300px; overflow-y: scroll; padding: 10px;"></div>
+            <input type="text" id="userInput" placeholder="Type a message..." class="form-control" />
+            <button onclick="sendMessage()" class="btn btn-primary mt-2">Send</button>
+        </div>
+        <!-- Logout Button -->
+        <form asp-action="Logout" method="post" style="margin-top: 10px;">
+            <button type="submit" class="logout-button">
+                Logout
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function toggleChatbot() {
+            var chatbot = document.getElementById("chatbot");
+            chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+        }
+
+        async function sendMessage() {
+            var userInput = document.getElementById("userInput").value;
+            var chatbox = document.getElementById("chatbox");
+
+            var userMessage = document.createElement("div");
+            userMessage.textContent = "You: " + userInput;
+            chatbox.appendChild(userMessage);
+
+            var response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userInput })
+            });
+            var botMessage = await response.text();
+
+            var botResponse = document.createElement("div");
+            botResponse.textContent = "Bot: " + botMessage;
+            chatbox.appendChild(botResponse);
+
+            document.getElementById("userInput").value = "";
+        }
+    </script>
+
+</body>
+</html>

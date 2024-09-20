@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CMA</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Customer" asp-action="Index">CMA</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Session Timeout Display -->
+    <div id="sessionTimeout" style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); font-weight: bold; background-color: yellow; padding: 5px;">
+        Session expires in: <span id="timeoutDisplay">Loading...</span>
+    </div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - CMA - <a asp-area="" asp-controller="Customer" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        function updateSessionTimeout() {
+            var timeoutDisplay = document.getElementById("timeoutDisplay");
+            var sessionStart = '@Context.Session.GetString("SessionStart")'; // Retrieve session start time from the server
+            if (sessionStart) {
+                var sessionStartDate = new Date(sessionStart);
+                var now = new Date();
+                var expiresAt = new Date(sessionStartDate.getTime() + 5 * 60 * 1000); // 5 minutes session duration
+                var remainingTime = Math.max(0, expiresAt - now);
+                var minutes = Math.floor(remainingTime / (1000 * 60));
+                var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+                timeoutDisplay.textContent = minutes + "m " + seconds + "s";
+
+                if (remainingTime <= 0) {
+                    timeoutDisplay.textContent = "Session expired!";
+                }
+            }
+        }
+
+        // Update session timeout every second
+        setInterval(updateSessionTimeout, 1000);
+    </script>
+</body>
+</html>
